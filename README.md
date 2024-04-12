@@ -1,6 +1,6 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is an Online Commerce platform being developed using React and Vite (JavaScript), and it's currently under construction.
 
 Currently, two official plugins are available:
 
