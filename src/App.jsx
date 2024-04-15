@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
-import MyOrderPage from "./components/MyOrder/MyOrderPage";
+import LoginPage from "./components/Authentication/LoginPage";
 
 const App = () => {
   return (
@@ -12,7 +12,8 @@ const App = () => {
         {/* <ProductsPage /> */}
         {/* <SingleProductPage /> */}
         {/* <CartPage /> */}
-        <MyOrderPage />
+        {/* <MyOrderPage /> */}
+        <LoginPage />
       </main>
     </div>
   );
