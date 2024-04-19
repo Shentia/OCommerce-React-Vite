@@ -1,13 +1,15 @@
 import React from "react";
 import "./Link.css";
-const Link = ({ title, link, sidebar }) => {
+import { NavLink } from "react-router-dom";
+const Link = ({ title, link, sidebar, image }) => {
   return (
-    <a
-      href={link}
+    <NavLink
+      to={link}
       className={sidebar ? "align_center sidebar_link" : "align_center"}
     >
+      <img src={image} alt="" />
       {title}
-    </a>
+    </NavLink>
   );
 };
 
