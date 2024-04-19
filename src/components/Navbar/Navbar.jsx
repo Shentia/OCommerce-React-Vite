@@ -1,6 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import Link from "./Link";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -25,11 +26,11 @@ const Navbar = () => {
         <Link title="Products" link="/products" />
         <Link title="Login" link="/login" />
         <Link title="Signup" link="/signup" />
-        <Link title="My Orders" link="/my_orders" />
+        <Link title="My Orders" link="/myorders" />
         <Link title="Logout" link="/logout" />
-        <a href="/cart" className="align_center">
+        <NavLink to="/cart" className="align_center">
           Cart <p className="align_center cart_counts">0</p>
-        </a>
+        </NavLink>
       </div>
     </div>
   );
