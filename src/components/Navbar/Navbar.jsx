@@ -3,7 +3,7 @@ import "./Navbar.css";
 import Link from "./Link";
 import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ user }) => {
   return (
     <div className="navbar align_center">
       <div className="align_center">
@@ -24,13 +24,21 @@ const Navbar = () => {
       <div className="align_center navbar_links">
         <Link title="Home" link="/" />
         <Link title="Products" link="/products" />
-        <Link title="Login" link="/login" />
-        <Link title="Signup" link="/signup" />
-        <Link title="My Orders" link="/myorders" />
-        <Link title="Logout" link="/logout" />
-        <NavLink to="/cart" className="align_center">
-          Cart <p className="align_center cart_counts">0</p>
-        </NavLink>
+        {!user && (
+          <>
+            <Link title="Login" link="/login" />
+            <Link title="Signup" link="/signup" />
+          </>
+        )}
+        {user && (
+          <>
+            <Link title="My Orders" link="/myorders" />
+            <Link title="Logout" link="/logout" />
+            <NavLink to="/cart" className="align_center">
+              Cart <p className="align_center cart_counts">0</p>
+            </NavLink>
+          </>
+        )}
       </div>
     </div>
   );
