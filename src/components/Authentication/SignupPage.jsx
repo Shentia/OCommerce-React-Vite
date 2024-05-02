@@ -4,6 +4,7 @@ import user from "../../assets/user.webp";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { signup } from "../../services/userServices";
 
 const schema = z
   .object({
@@ -34,8 +35,9 @@ const SignupPage = () => {
   } = useForm({
     resolver: zodResolver(schema),
   });
-  const onSubmit = (formData) => console.log(formData);
-  console.log(profilePic);
+  const onSubmit = async (formData) => {
+    await signup(formData, profilePic);
+  };
   return (
     <section className="align_center form_page">
       <form className=" signup_form" onSubmit={handleSubmit(onSubmit)}>
