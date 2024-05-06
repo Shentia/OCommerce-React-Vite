@@ -20,7 +20,7 @@ import Loader from "../Common/Loader";
 //   stock: 10,
 // };
 
-const SingleProductPage = () => {
+const SingleProductPage = ({ addToCart }) => {
   const [selectImage, setSelectImage] = useState(0);
   const { id } = useParams();
   const { data: product, error, isLoading } = useData(`products/${id}`);
@@ -63,7 +63,12 @@ const SingleProductPage = () => {
                 stock={product.stock}
               />
             </div>
-            <button className="search_button add_cart">Add to Cart</button>
+            <button
+              className="search_button add_cart"
+              onClick={() => addToCart(product, quantity)}
+            >
+              Add to Cart
+            </button>
           </div>
         </>
       )}
